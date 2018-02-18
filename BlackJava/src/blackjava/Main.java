@@ -15,14 +15,13 @@ import javax.swing.JTextField;
 public class Main {
 
     public static void main(String[] args) {
-        Deck deck = new Deck();
+        //Deck deck = new Deck();
         //deck.displayDeck();
-        deck.shuffleDeck();
-        deck.displayDeck();
-
-        //int caixa = 100;
-        //TelaPrincipal tela = new TelaPrincipal();
-        //tela.setVisible(true);
+        //deck.shuffleDeck();
+        //deck.displayDeck();
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setTitle("BlackJava");
+        tela.setVisible(true);
     }
 
 }

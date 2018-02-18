@@ -6,6 +6,7 @@
 package blackjava.visao;
 
 import javax.swing.JTextField;
+import blackjava.Deck;
 
 /**
  *
@@ -13,10 +14,14 @@ import javax.swing.JTextField;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
+    String aux;
+    Deck deck = new Deck();
+
     /**
      * Creates new form NewJFrame
      */
     public TelaPrincipal() {
+
         initComponents();
     }
 
@@ -29,7 +34,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelFundo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jButtonDeal = new javax.swing.JButton();
         jButtonHit = new javax.swing.JButton();
         jButtonStand = new javax.swing.JButton();
@@ -37,14 +42,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelAposta = new javax.swing.JLabel();
         jTextFieldAposta = new javax.swing.JTextField();
         jTextFieldCaixa = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ProfessorDealer.png"))); // NOI18N
-        jLabelFundo.setText("jLabel1");
-        getContentPane().add(jLabelFundo);
-        jLabelFundo.setBounds(10, 0, 492, 512);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ProfessorDealer2.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 490, 510);
 
         jButtonDeal.setBackground(new java.awt.Color(204, 204, 204));
         jButtonDeal.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -56,7 +62,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonDeal);
-        jButtonDeal.setBounds(7, 540, 80, 30);
+        jButtonDeal.setBounds(10, 550, 80, 30);
 
         jButtonHit.setBackground(new java.awt.Color(204, 204, 204));
         jButtonHit.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -70,7 +76,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonHit);
-        jButtonHit.setBounds(100, 540, 70, 30);
+        jButtonHit.setBounds(100, 550, 70, 30);
 
         jButtonStand.setBackground(new java.awt.Color(204, 204, 204));
         jButtonStand.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -84,7 +90,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonStand);
-        jButtonStand.setBounds(180, 540, 100, 30);
+        jButtonStand.setBounds(180, 550, 100, 30);
 
         jLabelCaixa.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabelCaixa.setText("CAIXA");
@@ -119,12 +125,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jTextFieldCaixa);
         jTextFieldCaixa.setBounds(400, 540, 90, 30);
 
+        jTextField1.setText("jTextField1");
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(90, 510, 190, 20);
+
+        jLabel2.setText("SAIDA");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(30, 510, 40, 20);
+
         setSize(new java.awt.Dimension(518, 632));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonDealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDealActionPerformed
-        // TODO add your handling code here:
+        int caixa = Integer.parseInt(jTextFieldCaixa.getText());
+        int aposta = Integer.parseInt(jTextFieldAposta.getText());
+        if (aposta > caixa) {
+            System.out.println("Aposta maior do que em caixa");
+        } else {
+            jButtonDeal.setEnabled(false);
+            jTextFieldCaixa.setText(Integer.toString(caixa - aposta));
+            deck.shuffleDeck();
+            deck.displayDeck();
+        }
     }//GEN-LAST:event_jButtonDealActionPerformed
 
     private void jButtonHitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHitActionPerformed
@@ -171,21 +194,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDeal;
     private javax.swing.JButton jButtonHit;
     private javax.swing.JButton jButtonStand;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelAposta;
     private javax.swing.JLabel jLabelCaixa;
-    private javax.swing.JLabel jLabelFundo;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldAposta;
     private javax.swing.JTextField jTextFieldCaixa;
     // End of variables declaration//GEN-END:variables
