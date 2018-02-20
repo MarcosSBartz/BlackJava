@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package blackjava.visao;
+package Cliente.visao;
 
 import javax.swing.JTextField;
-import blackjava.Deck;
+import Cliente.Deck;
 
 /**
  *

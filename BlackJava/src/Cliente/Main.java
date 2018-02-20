@@ -1,0 +1,27 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Cliente;
+
+import Cliente.visao.TelaPrincipal;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author marcos
+ */
+public class Main {
+
+    public static void main(String[] args) {
+        //Deck deck = new Deck();
+        //deck.displayDeck();
+        //deck.shuffleDeck();
+        //deck.displayDeck();
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setTitle("BlackJava");
+        tela.setVisible(true);
+    }
+
+}
